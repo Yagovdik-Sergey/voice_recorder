@@ -1,5 +1,4 @@
 import wave
-import os
 import time
 import threading
 import tkinter
@@ -58,7 +57,7 @@ class VoiceRecorder():
         stream.close()
         audio.terminate()
 
-        sound_file = wave.open(f'recording{time.ctime()}.wav', 'wb')
+        sound_file = wave.open(f'recording {time.ctime()}.wav', 'wb')
         sound_file.setnchannels(1)
         sound_file.setsampwidth(audio.get_sample_size(pyaudio.paInt16))
         sound_file.setframerate(44100)
